@@ -12,7 +12,7 @@ export const shortenUrl = async (req, res, client) => {
 export const redirectUrl = async (req, res, client) => {
     const { shortcode } = req.params;
     const url = await client.get(shortcode);
-
+ 
     if (url) {
         return res.redirect(302, url);
     } else {
